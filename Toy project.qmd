@@ -1,0 +1,11 @@
+---
+title: "Toy project"
+---
+
+Discuss with Dr. Y of setting up a toy project to share with the rest of the team, so they can get familiar with R project and Github
+
+Tasks for members to do: download git, set up Rstudio clone the project from Github create a self-introduction qmd file and commit to Git
+
+Share this idea to Dr. Y, discuss time allocation to Github team collaboration
+
+The big idea: the only way to adopt Github is to let team members practice with git and R
