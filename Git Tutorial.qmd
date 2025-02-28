@@ -1,0 +1,33 @@
+---
+title: "Actions to take after cloning the project from Github"
+---
+
+Great job! You have successfully cloned the project from Github. Here are the next steps to practice with git and boost your git ability.
+
+Step 1:
+
+Write your self-introduction in Self Introductions.qmd
+
+Step 2:
+
+Try rendering the qmd file, and you will see a website pop up
+
+Step 3:
+
+Go to Terminal, type
+
+```{r}
+git commit -am "message describing the changes you made"
+```
+
+and hit enter. Now you commit all the changes you made!
+
+Step 4:
+
+In the terminal, type
+
+```{r}
+git push
+```
+
+and hit enter. Now all your changes are pushed to Github repository! Go to the project page and check if the content is updated!
