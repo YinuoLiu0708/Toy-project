@@ -10,14 +10,15 @@ Write your self-introduction in Self Introductions.qmd
 
 Step 2:
 
-Try rendering the qmd file, and you will see a website pop up
+Try rendering the qmd file (look out for the blue arrow with the name Render), and you will see a website pop up
 
 Step 3:
 
 Go to Terminal, type
 
 ```{r}
-git commit -am "message describing the changes you made"
+git add .
+git commit -m "message describing the changes you made"
 ```
 
 and hit enter. Now you commit all the changes you made!
@@ -30,4 +31,22 @@ In the terminal, type
 git push
 ```
 
-and hit enter. Now all your changes are pushed to Github repository! Go to the project page and check if the content is updated!
+and hit enter. Now all your changes are pushed to Github repository! Go to the Git Repository and check if the content is updated!
+
+Step 5:
+
+Seeing the repository being updated by other members? In the terminal, type
+
+```{r}
+git pull
+```
+
+Now your local file is up to date!
+
+If no change is made on the remote repository, your local project will stay the same. If changes are made on the remote repository, your local project will be synchronized to the newest version.
+
+Friendly reminder:
+
+Before working on the project, always "git pull" to make sure your file is up to date with changes made by your team member.
+
+Remember to commit your changes and push them to GitHub repository, so your changes can be saved and other members can see the work you did.
