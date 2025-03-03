@@ -8,3 +8,5 @@ Enter your self-introduction here:
 Hi everyone!
 
 I'm May Liu, a research intern at IMBHR. I graduated from UNC Chapel Hill in 2024 with dual degrees in psychology and computer science. I'm interested in psychometrics, statistical modeling, and data science. In the future, I plan to apply for PhD programs in quantitative psychology. In my free time, I enjoy reading, playing Nintendo Switch, and watching movies.
+
+Hello, I am Guillermo. I am creating a new branch called GPA.
