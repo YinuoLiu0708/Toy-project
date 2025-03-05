@@ -1,0 +1,191 @@
+---
+title: "Git Installation Guide"
+output: pdf_document
+date: "2025-03-05"
+---
+
+### Step 1: Download Git
+
+First, you need to install Git.
+
+To install Git, go to the Git website here: <https://git-scm.com/downloads>
+
+Then, click download for for your operative system (e.g., Windows) and allow it to install. Accept the standard recommendations during the installation.
+
+To verify Git installation, open RStudio, in the terminal, type
+
+```{r, eval=FALSE}
+git --version
+```
+
+If you see something like git version 2.30.0, this means your Git is successfully installed.
+
+### Step 2: Setting up Git in RStudio
+
+To do the setup, we are using the R Package “usethis” Let’s start running the code below in console.
+
+```{r, eval=FALSE}
+install.packages("usethis")
+library(usethis)
+
+edit_git_config()
+```
+
+It will open a .gitconfig file in R that looks like this:
+
+![](images/Screenshot%202025-03-03%20152728.png)
+
+Enter your name and email address at line 7 and 8 and save the changes (Ctrl + S).
+
+Use the same user name and email address that you used to create your Github account.
+
+The code above [user] is to related to Git LFS (large file storage), which is an extension of Git to help manage large files like datasets, images, or videos. It's not necessary to establish git connection (only your name and email are absolutely necessary).
+
+If you find large file storage management important for your project, feel free to copy and paste it into your .gitconfig file.
+
+```{r, eval=FALSE}
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+```
+
+Be mindful of space and symbols! Incorrect space and symbols may crush the configuration. If you see error message related to .gitconfig, reopen the file with the code edit_git_config() and check if everything is correctly spelled and spaced.
+
+### Step 3: Create a GitHub token
+
+A personal access token in GitHub is a secure, alphanumeric string that grants access to your GitHub account and can be used instead of a password for authentication.
+
+Run the following code in console to create a personal access token.
+
+```{r, eval=FALSE}
+usethis::create_github_token()
+```
+
+It will take you to a new webpage outside of RStudio that looks like this:
+
+![](images/Screenshot%202025-03-03%20153024.png)
+
+Give your personal access token a name (whatever you want!). Then scroll to the bottom of the page and click ‘Generate new token’. It will take you to a new page where you can copy your personal access token:
+
+![](images/Screenshot%202025-03-03%20153127.png)
+
+Copy your personal access token then go back to the console in Rstudio. It is recommended to save a copy of the taken in a secure file in your computer.
+
+Typing the following code will open a dialog that asks you to enter your token.
+
+```{r, eval=FALSE}
+gitcreds::gitcreds_set()
+```
+
+Enter you token.
+
+You have configured RStudio to be linked to your GitHub account.
+
+### Step 4: Create a local project and commit changes
+
+Now you can push your local project to GitHub and share it with your team.
+
+First, you can create a new project.
+
+In the top left corner of RStudio, go to File -\> New Project, and you will see the following page
+
+![](images/Screenshot%202025-03-05%20151204.png)
+
+Click New Directory and choose a project type (Quarto for instance). It will take you to this page:
+
+![](images/Screenshot%202025-03-05%20151400.png)
+
+Give the project a name. Make sure you check all boxes. Then click Create Project. Now you are in a new project!
+
+To get connected with GitHub, run the following code in the console:
+
+```{r, eval=FALSE}
+library(usethis)
+usethis::use_git()
+```
+
+When RStudio asks you questions in the console, select yes for all options (they may have it worded “definitely” or “For sure”).
+
+Now, you have initialized your new project as a Git repository.
+
+Make sure that you have the Git tab in the top right section of R studio.
+
+![](images/Screenshot%202025-03-05%20151716.png)
+
+Create a new file in the project (could be R script, R markdown, or a random file you like). Give the file a name and save it.
+
+You can find that there is a file pop up in the right upper corner.
+
+![](images/Screenshot%202025-03-05%20153220.png)
+
+You need to commit the changes you made (adding a new file in this case).
+
+There are two ways to commit the changes: 1. type command in the terminal, 2. use the Git window
+
+#### Commit method 1
+
+Go to terminal, type
+
+```{r, eval=FALSE}
+git add .
+git commit -m "describe the changes you made"
+```
+
+#### Commit method 2
+
+Click Commit in the Git window, and you will see this page
+
+![](images/Screenshot%202025-03-05%20153653.png)
+
+Rember to check the staged box before the changes you want to commit.
+
+Type in your commit message (you can't leave that box empty) and then click Commit.
+
+### Step 5: Push the local project to GitHub
+
+You have created a project and committed changes you made. The next step is to push the local project to GitHub.
+
+In console, type the code
+
+```{r, eval=FALSE}
+library(usethis)
+use_github()
+```
+
+Now your project is pushed to GitHub!
+
+Go to your GitHub page and find the corresponding project.
+
+### Step 6: Clone Git Repository in RStudio
+
+Cloning a Git repository in RStudio allows you to create a local copy of a project from GitHub.
+
+First, you need to access the GitHub repository you want to clone.
+
+Take this toy project for example. You will see this page
+
+![](images/Screenshot%202025-03-05%20155840.png)
+
+Click on the green Code button. Then, copy the http URL to the clipboard.
+
+![](images/Screenshot%202025-03-05%20160008.png)
+
+Open a new session in RStudio (Go to Session -\> New Session).
+
+In the top left corner of RStudio, go to File -\> New Project, then choose Version Control.
+
+![](images/Screenshot%202025-03-05%20160414.png)
+
+That will open a new window with two options, choose Git
+
+![](images/Screenshot%202025-03-05%20160503.png)
+
+Now, paste the link you copied from GitHub into Repository URL. Then click Create Project.
+
+![](images/Screenshot%202025-03-05%20160543.png)
+
+You have a copy of the Toy project from the remote depository on GitHub!
+
+Go to Git Command Practice.qmd to continue the next step of tutorial.
