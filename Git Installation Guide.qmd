@@ -1,6 +1,29 @@
 ---
-title: "Git Installation Guide"
-format: html
+title: "RStudio, Git, and GitHub Configuration Tutorial"
+subtitle: "A step by step guide for a first time user"
+author: "List of authors"
+date: last-modified
+date-format: "DD-MM-YYYY"
+title-block-banner: "#0000"
+format: 
+  html:
+    embed-resources: true
+    smooth-scroll: true
+    theme: cosmo
+    fontcolor: black
+    toc: true
+    toc-location: left
+    toc-title: Summary
+    toc-depth: 3
+    include-after-body: footer.html
+  pdf:
+    toc: true
+    toc-depth: 3
+    latex-engine: xelatex
+    number-sections: true
+    includes:
+      in-header: preamble.tex
+css: styles.css
 ---
 
 ### Step 1: Download Git
