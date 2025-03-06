@@ -1,7 +1,6 @@
 ---
 title: "Git Installation Guide"
-output: pdf_document
-date: "2025-03-05"
+format: html
 ---
 
 ### Step 1: Download Git
@@ -39,7 +38,7 @@ Enter your name and email address at line 7 and 8 and save the changes (Ctrl + S
 
 Use the same user name and email address that you used to create your Github account.
 
-The code above [user] is to related to Git LFS (large file storage), which is an extension of Git to help manage large files like datasets, images, or videos. It's not necessary to establish git connection (only your name and email are absolutely necessary).
+The code above \[user\] is to related to Git LFS (large file storage), which is an extension of Git to help manage large files like datasets, images, or videos. It's not necessary to establish git connection (only your name and email are absolutely necessary).
 
 If you find large file storage management important for your project, feel free to copy and paste it into your .gitconfig file.
 
