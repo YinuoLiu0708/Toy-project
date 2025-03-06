@@ -1,9 +1,9 @@
 ---
 title: "RStudio, Git, and GitHub Configuration Tutorial"
 subtitle: "A step by step guide for a first time user"
-author: "List of authors"
+author: "May Liu, Guillermo Peretz-Algorta" 
 date: last-modified
-date-format: "DD-MM-YYYY"
+date-format: "MM-DD-YYYY"
 title-block-banner: "#0000"
 format: 
   html:
