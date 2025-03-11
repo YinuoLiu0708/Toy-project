@@ -51,3 +51,5 @@ R: https://cran.rstudio.com/
 RStudio: https://posit.co/download/rstudio-desktop/
 
 Be ready for your R trip with Git!
+
+Test with my branch and push it to the remote repo
