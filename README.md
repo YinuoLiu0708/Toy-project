@@ -55,3 +55,5 @@ Be ready for your R trip with Git!
 Test with my branch and push it to the remote repo
 
 testing differences between main branch and personal branch
+
+another test of git branch
