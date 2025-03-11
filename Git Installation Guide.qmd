@@ -87,11 +87,11 @@ usethis::create_github_token()
 
 It will take you to a new webpage outside of RStudio that looks like this:
 
-![](images/Screenshot%202025-03-03%20153024.png)
+![](images/Screenshot%202025-03-03%20153024.png){width="855"}
 
 Give your personal access token a name (whatever you want!). Then scroll to the bottom of the page and click ‘Generate new token’. It will take you to a new page where you can copy your personal access token:
 
-![](images/Screenshot%202025-03-03%20153127.png)
+![](images/Screenshot%202025-03-03%20153127.png){width="854"}
 
 Copy your personal access token then go back to the console in Rstudio. It is recommended to save a copy of the taken in a secure file in your computer.
 
@@ -113,11 +113,11 @@ First, you can create a new project.
 
 In the top left corner of RStudio, go to File -\> New Project, and you will see the following page
 
-![](images/Screenshot%202025-03-05%20151204.png)
+![](images/Screenshot%202025-03-05%20151204.png){width="570"}
 
 Click New Directory and choose a project type (Quarto for instance). It will take you to this page:
 
-![](images/Screenshot%202025-03-05%20151400.png)
+![](images/Screenshot%202025-03-05%20151400.png){width="568"}
 
 Give the project a name. Make sure you check all boxes. Then click Create Project. Now you are in a new project!
 
@@ -140,7 +140,7 @@ Create a new file in the project (could be R script, R markdown, or a random fil
 
 You can find that there is a file pop up in the right upper corner.
 
-![](images/Screenshot%202025-03-05%20153220.png)
+![](images/Screenshot%202025-03-05%20153220.png){width="635"}
 
 You need to commit the changes you made (adding a new file in this case).
 
@@ -151,19 +151,20 @@ There are two ways to commit the changes: 1. type command in the terminal, 2. us
 Go to terminal, type
 
 ```{r, eval=FALSE}
-git add .
-git commit -m "describe the changes you made"
+git commit -am "describe the changes you made"
 ```
 
 #### Commit method 2
 
 Click Commit in the Git window, and you will see this page
 
-![](images/Screenshot%202025-03-05%20153653.png)
+![](images/Screenshot%202025-03-05%20153653.png){width="676"}
 
-Rember to check the staged box before the changes you want to commit.
+Remeber to check the staged box before the changes you want to commit.
 
 Type in your commit message (you can't leave that box empty) and then click Commit.
+
+We recommend directly typing commands into the terminal to make commits, as there is a variety of git commands that we will use in future team collaboration. Don't let yourself be limited in the git window in RStudio!
 
 ### Step 5: Push the local project to GitHub
 
@@ -180,7 +181,69 @@ Now your project is pushed to GitHub!
 
 Go to your GitHub page and find the corresponding project.
 
-### Step 6: Clone Git Repository in RStudio
+### Step 6: Pull from Remote Repository
+
+In addition to push your local files to the remote end, you can also pull stuff from the remote repository.
+
+Type the following command in the terminal and hit Enter:
+
+```{r, eval=FALSE}
+git pull
+```
+
+It will suggest that your files are "Already up to date."
+
+Your local file has the same content as the remote repository, so nothing more can be pulled and incorporated into your local files.
+
+However, when you work with multiple team members in the future, always remember to git pull before adding stuff, so you can keep up with all the changes your teammates make.
+
+Also remember to commit changes with accurate descriptions and push your commits to the remote repository, so other members can keep track of your work as well!
+
+### Step 7: Creating Branches
+
+New concept alert! You will learn an important feature of git – branch in the next few sections.
+
+The branching feature allows you to create independent lines of development within a repository. This means you can work on new features, experiments, or bug fixes without affecting the main codebase.
+
+Type the following command to see all existing branches and the branch you're at right now
+
+```{r, eval=FALSE}
+git branch
+```
+
+There is only one master branch since you haven't created any new branches yet. The master branch is marked as green to indicate that you are here.
+
+The master branch is the default branch in git repositories. People often treat it as the stable version of your project, and changes are merged into the master only after they've been thoroughly tested.
+
+You may want to experiment with new code and features in your personal branch instead of the master branch (which is a good practice of coding). How to create a branch?
+
+Here is the command:
+
+```{r, eval=FALSE}
+git switch new-branch-name
+```
+
+Replace your preferred branch name in the command!
+
+Try checking branches with this code
+
+```{r, eval=FALSE}
+git branch
+```
+
+Now you will see two branches, one master, and one \<whatever you call your personal branch\>, and the green mark suggests that you are at the new branch you just created!
+
+This is because the command - git switch branch-name - does two things at the same time. It creates a new branch, and then switch your working branch to the newly created one.
+
+If you want to go back to the master branch, try
+
+```{r, eval=FALSE}
+git switch master
+```
+
+Now you're back at the master! Great work creating new branches and switching back and forth!
+
+### Step N: Clone Git Repository in RStudio
 
 Cloning a Git repository in RStudio allows you to create a local copy of a project from GitHub.
 
@@ -188,25 +251,25 @@ First, you need to access the GitHub repository you want to clone.
 
 Take this toy project for example. You will see this page
 
-![](images/Screenshot%202025-03-05%20155840.png)
+![](images/Screenshot%202025-03-05%20155840.png){width="868"}
 
 Click on the green Code button. Then, copy the http URL to the clipboard.
 
-![](images/Screenshot%202025-03-05%20160008.png)
+![](images/Screenshot%202025-03-05%20160008.png){width="551"}
 
 Open a new session in RStudio (Go to Session -\> New Session).
 
 In the top left corner of RStudio, go to File -\> New Project, then choose Version Control.
 
-![](images/Screenshot%202025-03-05%20160414.png)
+![](images/Screenshot%202025-03-05%20160414.png){width="569"}
 
 That will open a new window with two options, choose Git
 
-![](images/Screenshot%202025-03-05%20160503.png)
+![](images/Screenshot%202025-03-05%20160503.png){width="568"}
 
 Now, paste the link you copied from GitHub into Repository URL. Then click Create Project.
 
-![](images/Screenshot%202025-03-05%20160543.png)
+![](images/Screenshot%202025-03-05%20160543.png){width="575"}
 
 You have a copy of the Toy project from the remote depository on GitHub!
 
