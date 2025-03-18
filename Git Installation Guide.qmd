@@ -243,6 +243,24 @@ git switch master
 
 Now you're back at the master! Great work creating new branches and switching back and forth!
 
+### Step 8: Merging Branches
+
+How do we synchronize the progress on different branches? The trick is merge.
+
+Let's first go back to the new branch you just created (command hint: git switch branch-name). Add some new content like creating a new file, writing down some random sentences. Save and commit these new changes (command hint: git commit -am "comments").
+
+Now switch back to the master branch. You will surprisingly find that all the content you just added is not there. It's the purpose of branches to keep work separate. It's also easy to synchronize the progress on different branches with the following git command.
+
+```{r, eval=FALSE}
+git merge name-of-branch-you-want-to-merge
+```
+
+Wait a few seconds, and you will see the newly added content shows up on your master branch.
+
+It's important that you stay or switch to the branch that you want new changes be merged **into**, and specify the name of branch where all changes come from in the git command.
+
+Right now, you don't need to worry about the trouble of resolving merge conflict, a condition that both branches affect the same line of code which causes conflicts. When merge conflict shows up in the future (and it will, frequently, in everyone's coding time), you will act as the judge of branches and decide how to reconcile the differences.
+
 ### Step N: Clone Git Repository in RStudio
 
 Cloning a Git repository in RStudio allows you to create a local copy of a project from GitHub.
