@@ -261,6 +261,24 @@ It's important that you stay or switch to the branch that you want new changes b
 
 Right now, you don't need to worry about the trouble of resolving merge conflict, a condition that both branches affect the same line of code which causes conflicts. When merge conflict shows up in the future (and it will, frequently, in everyone's coding time), you will act as the judge of branches and decide how to reconcile the differences.
 
+### Step 8: Push Local Branches to Remote Repository
+
+You want to publish your local branches in the remote repository, so team members can see them.
+
+You can push one specific local branch to the remote end with the following command:
+
+```{r, eval=FALSE}
+git push -u origin branch-name
+```
+
+You can also push all local branches to the remote end at once:
+
+```{r, eval=FALSE}
+git push --all origin
+```
+
+It's a good practice to use different branches when working collaboratively. It promotes isolation of work, which reduces the risk of introducing bugs to the master branch. It facilitates parallel development: multiple team members can work simultaneously on different features. Though creating and interacting with branches may seem like a burden to you right now, try embracing the idea of branches and practicing it since it will make your future work easier.
+
 ### Step N: Clone Git Repository in RStudio
 
 Cloning a Git repository in RStudio allows you to create a local copy of a project from GitHub.
