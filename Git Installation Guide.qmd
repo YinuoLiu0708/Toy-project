@@ -303,7 +303,9 @@ You just created your first pull request! Navigate back to the code page, check 
 
 If you are working with multiple team members, remember to consult other members' opinions before creating and executing pull requests. You don't want to change the base code that everyone will work on before notifying other people.
 
-### Step N: Clone Git Repository in RStudio
+### Step 10: Clone Git Repository in RStudio
+
+Now you have some basic knowledge of Git, GitHub, and branches. It's a good time to really interact with a shared project that multiple people work on. You first need to obtain a copy of the project.
 
 Cloning a Git repository in RStudio allows you to create a local copy of a project from GitHub.
 
@@ -333,4 +335,13 @@ Now, paste the link you copied from GitHub into Repository URL. Then click Creat
 
 You have a copy of the Toy project from the remote depository on GitHub!
 
-Go to Git Command Practice.qmd to continue the next step of tutorial.
+### Step 11: Practice!
+
+It's a good time to practice all the commands you learned in this tutorial.
+
+Try the following tasks
+
+1.  create a branch named as your preferred name
+2.  add your introduction in Self Introductions.qmd
+3.  Commit all the changes you made
+4.  Push the local branch to the remote end
