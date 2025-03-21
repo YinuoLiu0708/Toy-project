@@ -6,7 +6,7 @@ This toy project serves as a tutorial for setting up Git in RStudio and practici
 
 If you prefer working with pdf, Find and download the file Git-Installation-Guide.pdf. Follow each step in the guide.
 
-If you prefer working with website, open Git Installation Guide.html in a web browser.
+If you prefer working with website, download Git Installation Guide.html and open it in a web browser.
 
 If you encounter errors at any step, try copying the error message to ChatGPT and follow its advice. If you need more help with troubleshooting, please contact May Liu by emailing her at Yinuo.Liu\@nationwidechildrens.org or messaging her on Teams.
 
