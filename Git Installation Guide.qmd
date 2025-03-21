@@ -42,13 +42,17 @@ git --version
 
 If you see something like git version 2.30.0, this means your Git is successfully installed.
 
+::: callout-note
+You run R code in the console and system code like git command in the terminal
+:::
+
 ### Step 2: Setting up Git in RStudio
 
 To do the setup, we are using the R Package “usethis” Let’s start running the code below in console.
 
 ```{r, eval=FALSE}
-install.packages("usethis")
-library(usethis)
+install.packages("usethis") # install the package
+library(usethis) # run the package
 
 edit_git_config()
 ```
@@ -59,9 +63,15 @@ It will open a .gitconfig file in R that looks like this:
 
 Enter your name and email address at line 7 and 8 and save the changes (Ctrl + S).
 
+::: callout-note
 Use the same user name and email address that you used to create your Github account.
+:::
+
+::: {.callout-caution collapse="true"}
+## More knowledge on Git Large File Storage
 
 The code above \[user\] is to related to Git LFS (large file storage), which is an extension of Git to help manage large files like datasets, images, or videos. It's not necessary to establish git connection (only your name and email are absolutely necessary).
+:::
 
 If you find large file storage management important for your project, feel free to copy and paste it into your .gitconfig file.
 
@@ -109,7 +119,7 @@ You have configured RStudio to be linked to your GitHub account.
 
 Now you can push your local project to GitHub and share it with your team.
 
-First, you can create a new project.
+First, you need to create a new project.
 
 In the top left corner of RStudio, go to File -\> New Project, and you will see the following page
 
@@ -164,7 +174,11 @@ Remeber to check the staged box before the changes you want to commit.
 
 Type in your commit message (you can't leave that box empty) and then click Commit.
 
-We recommend directly typing commands into the terminal to make commits, as there is a variety of git commands that we will use in future team collaboration. Don't let yourself be limited in the git window in RStudio!
+::: callout-important
+## Good Git Practice
+
+We recommend directly typing commands into the terminal to make commits, as there is a variety of git commands that we will use in the future team collaboration. Don't let yourself be limited in the git window in RStudio!
+:::
 
 ### Step 5: Push the local project to GitHub
 
@@ -201,7 +215,11 @@ Also remember to commit changes with accurate descriptions and push your commits
 
 ### Step 7: Creating Branches
 
-New concept alert! You will learn an important feature of git – branch in the next few sections.
+::: callout-tip
+## New concept alert!
+
+You will learn an important feature of git – branch in the next few sections.
+:::
 
 The branching feature allows you to create independent lines of development within a repository. This means you can work on new features, experiments, or bug fixes without affecting the main codebase.
 
@@ -247,7 +265,21 @@ Now you're back at the master! Great work creating new branches and switching ba
 
 How do we synchronize the progress on different branches? The trick is merge.
 
-Let's first go back to the new branch you just created (command hint: git switch branch-name). Add some new content like creating a new file, writing down some random sentences. Save and commit these new changes (command hint: git commit -am "comments").
+Let's first go back to the new branch you just created
+
+::: callout-tip
+## Command hint
+
+git switch branch-name
+:::
+
+Add some new content like creating a new file, writing down some random sentences. Save and commit these new changes
+
+::: callout-tip
+## Command hint
+
+git commit -am "comments"
+:::
 
 Now switch back to the master branch. You will surprisingly find that all the content you just added is not there. It's the purpose of branches to keep work separate. It's also easy to synchronize the progress on different branches with the following git command.
 
@@ -281,23 +313,37 @@ It's a good practice to use different branches when working collaboratively. It 
 
 ### Step 9: Create Pull Request on GitHub
 
-Add something new on your local branch other than the master branch, add and commit the changes (command hint: git commit -am "comments"), then push to this local branch to the remote repository (command hint: git push -u origin branch-name).
+Add something new on your local branch other than the master branch, add and commit the changes.
+
+::: callout-tip
+## Command hint
+
+git commit -am "comments"
+:::
+
+Then push to this local branch to the remote repository
+
+::: callout-tip
+## Command hint
+
+git push -u origin branch-name
+:::
 
 After the changes on your local branch is committed and pushed, navigate to the GitHub page. You will see a notification like this.
 
-![](images/Screenshot 2025-03-20 152935.png){width="604"}
+![](images/Screenshot%202025-03-20%20152935.png){width="604"}
 
 This notification occurs because your feature branch is ahead of your master branch, meaning that the feature branch has changes not in the master branch. GitHub captures this discrepancy in branches, and it wants to make sure that the master branch is up-to-date, so it suggests to make a pull request to update the master branch.
 
 If you feel good about merging new changes to the master branch, click Compare & pull request.
 
-![](images/Screenshot 2025-03-20 153625.png)
+![](images/Screenshot%202025-03-20%20153625.png)
 
 You will see a page like that. Pay attention to the header. The base branch is the branch all the new changes will be merged into, and the compare branch is where the changes come from. The green words Able to merge indicates that there is no conflict between these two branches, and you can easily merge the branches.
 
 Add a title and a description to this pull request if you want to, then scroll down and click Create pull request.
 
-![](images/Screenshot 2025-03-20 154007.png)
+![](images/Screenshot%202025-03-20%20154007.png)
 
 You just created your first pull request! Navigate back to the code page, check out the master branch, and you will find that the edits you made on the feature branch are there on the master branch.
 
