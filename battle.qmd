@@ -19,4 +19,6 @@ Step 7: another test of conflicts
 
 Step 8: edit this file on GitHub
 
+Step 9: edit the file in RStudio
+
 Step 10: another step
