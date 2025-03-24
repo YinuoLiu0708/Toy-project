@@ -16,3 +16,7 @@ Step 5: ready to merge!
 Step 6: back to test1!
 
 Step 7: another test of conflicts
+
+Step 8: edit this file on GitHub
+
+Step 10: another step
