@@ -12,3 +12,5 @@ Step 3: I am someone else!
 Step 4: Skipping step 3!
 
 Step 5: ready to merge!
+
+Step 6: back to test1!
