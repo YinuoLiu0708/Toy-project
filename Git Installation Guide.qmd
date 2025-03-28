@@ -8,7 +8,7 @@ title-block-banner: "#0000"
 format: 
   html:
     embed-resources: true
-    smooth-scroll: true
+    smooth-scroll: false
     theme: cosmo
     fontcolor: black
     toc: true
