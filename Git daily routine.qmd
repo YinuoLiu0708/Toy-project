@@ -187,4 +187,4 @@ Engaging in code review and discussion about your changes.
 
 **Why It’s Important:**
 
-Pull requests facilitate collaborative code review, ensure adherence to coding standards, and help maintain code quality. :::
+Pull requests facilitate collaborative code review, ensure adherence to coding standards, and help maintain code quality.

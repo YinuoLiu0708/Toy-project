@@ -391,3 +391,5 @@ Try the following tasks
 2.  add your introduction in Self Introductions.qmd
 3.  Commit all the changes you made
 4.  Push the local branch to the remote end
+
+Remember to check out Git daily routine.html, which includes suggestions of what to keep in mind when using Git frequently.
