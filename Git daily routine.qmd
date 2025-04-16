@@ -15,7 +15,6 @@ format:
     toc-location: left
     toc-title: Summary
     toc-depth: 3
-    include-after-body: footer.html
   pdf:
     toc: true
     toc-depth: 3
@@ -29,6 +28,14 @@ execute:
   bash:
     eval: false
 ---
+
+This document lists the daily routine steps of using Git. You don't have to follow it exactly, but use it as a reference of what to keep in mind when collaborating on projects with Git and GitHub.
+
+::: callout-tip
+## Reminder
+
+In code that marks "your_branch", replace it with the name of the branch you're actually working on.
+:::
 
 ### 1. Fetch Latest Changes from Remote
 
@@ -180,4 +187,4 @@ Engaging in code review and discussion about your changes.
 
 **Why It’s Important:**
 
-Pull requests facilitate collaborative code review, ensure adherence to coding standards, and help maintain code quality.
+Pull requests facilitate collaborative code review, ensure adherence to coding standards, and help maintain code quality. :::

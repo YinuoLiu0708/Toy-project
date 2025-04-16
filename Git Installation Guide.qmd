@@ -32,7 +32,7 @@ First, you need to install Git.
 
 To install Git, go to the Git website here: <https://git-scm.com/downloads>
 
-Then, click download for for your operative system (e.g., Windows) and allow it to install. Accept the standard recommendations during the installation.
+Then, click download based on your operative system (e.g., Windows) and allow it to install. Accept the standard recommendations during the installation.
 
 To verify Git installation, open RStudio, in the terminal, type
 

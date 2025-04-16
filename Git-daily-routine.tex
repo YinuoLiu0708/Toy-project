@@ -1,0 +1,396 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Git daily routine},
+  pdfauthor={May Liu, Guillermo Peretz-Algorta},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Git daily routine}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{A walkthrough of Git practices}
+\author{May Liu, Guillermo Peretz-Algorta}
+\date{04-16-2025}
+
+\begin{document}
+\maketitle
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+
+This document lists the daily routine steps of using Git. You don't have
+to follow it exactly, but use it as a reference of what to keep in mind
+when collaborating on projects with Git and GitHub.
+
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, bottomtitle=1mm, arc=.35mm, titlerule=0mm, colframe=quarto-callout-tip-color-frame, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black, bottomrule=.15mm, leftrule=.75mm, breakable, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Reminder}, colback=white, left=2mm, toprule=.15mm, opacityback=0, rightrule=.15mm]
+
+In code that marks ``your\_branch'', replace it with the name of the
+branch you're actually working on.
+
+\end{tcolorbox}
+
+\subsection{1. Fetch Latest Changes from
+Remote}\label{fetch-latest-changes-from-remote}
+
+Before you start working, pull in the latest remote changes without
+modifying your working files.
+
+\texttt{git\ fetch\ origin}
+
+\textbf{What It Does:}
+
+Fetching downloads new data (commits, branches, etc.) from the remote
+repository, updating your local tracking branches. It does not alter
+your working branches.
+
+\textbf{Why It's Important:}
+
+Keeping your tracking branches up to date helps you see if there are any
+new changes (commits, merges, etc.) that might affect your work before
+you merge.
+
+\subsection{2. Check Which Branch You're
+On}\label{check-which-branch-youre-on}
+
+Ensure you're operating in the correct context by confirming your
+current branch.
+
+\texttt{git\ branch}
+
+\textbf{What It Does:}
+
+Lists all local branches with an asterisk indicating the active branch.
+
+\textbf{Why It's Important:}
+
+It's easy to lose track of what branch you're working on.
+Double-checking prevents confusion and helps avoid making commits on the
+wrong branch.
+
+\subsection{3. Compare Your Current Branch with its Remote
+Counterpart}\label{compare-your-current-branch-with-its-remote-counterpart}
+
+A comparison reveals differences between what's in your local branch and
+what's been pushed to the remote.
+
+\texttt{git\ log\ HEAD..origin/your\_branch\ -\/-oneline}
+
+\texttt{git\ log\ origin/your\_branch..HEAD\ -\/-oneline}
+
+\textbf{What It Does:}
+
+The first command shows commits present in the remote branch that
+haven't been applied to your local branch.
+
+The second command shows your local commits that haven't yet been pushed
+to the remote branch.
+
+\textbf{Why It's Important:}
+
+This helps in catching up to remote changes or verifying your work has
+been successfully pushed. It's a safeguard against merge conflicts and
+duplicate work.
+
+\subsection{4. Update Local Master with Latest Remote
+Changes}\label{update-local-master-with-latest-remote-changes}
+
+Get the latest `stable' branch changes from the remote before
+integrating them into your feature branch.
+
+\texttt{git\ switch\ master}
+
+\texttt{git\ pull\ origin\ master}
+
+\textbf{What It Does:}
+
+Switches your working branch to master (or main).
+
+Pulls and merges the latest changes from the remote master branch into
+your local master branch.
+
+\textbf{Why It's Important:}
+
+Ensures that your base branch is current. A regularly updated base
+minimizes conflicts when merging your feature branch later.
+
+\subsection{5. Switch to Your Working
+Branch}\label{switch-to-your-working-branch}
+
+Go back to your feature or working branch where your work is in
+progress.
+
+\texttt{git\ switch\ your\_branch}
+
+\textbf{What It Does:}
+
+Changes your working directory to the specified branch.
+
+\textbf{Why It's Important:}
+
+It ensures that the next commands (e.g., merging) are performed on your
+feature branch instead of master.
+
+\subsection{6. Merge Updated Master into Your Working
+Branch}\label{merge-updated-master-into-your-working-branch}
+
+Incorporate the latest updates from master into your current work,
+ensuring compatibility with the current project base.
+
+\texttt{git\ merge\ master}
+
+\textbf{What It Does:}
+
+Merges the master branch changes into your current branch.
+
+\textbf{Why It's Important:}
+
+Integrating frequent updates from master can reduce large, complex merge
+conflicts later, keeping your branch aligned with the main line of
+development.
+
+\subsection{7. Resolve Conflicts if Any}\label{resolve-conflicts-if-any}
+
+If merge conflicts occur, you'll need to resolve them manually.
+
+\textbf{What It Involves:}
+
+Editing conflicting files to reconcile differences.
+
+Testing to make sure that the resolutions do not break functionality.
+
+\textbf{Why It's Important}
+
+Proper resolution ensures stability and correctness of your codebase.
+
+\subsection{8. Stage and Commit Your
+Work}\label{stage-and-commit-your-work}
+
+Once your changes are ready and conflicts are resolved, save them in
+your local repository.
+
+\texttt{git\ add\ .}
+
+\texttt{git\ commit\ -m\ "Meaningful\ commit\ message"}
+
+\textbf{What It Does:}
+
+\texttt{git\ add\ .} stages all modified files.
+
+\texttt{git\ commit} saves the changes with a descriptive message.
+
+\textbf{Why It's Important:}
+
+Structuring commits with clear messages improves project history, easing
+code reviews and troubleshooting.
+
+\subsection{9. Push Your Feature Branch to
+Remote}\label{push-your-feature-branch-to-remote}
+
+Publish your work online so it can be reviewed by your team members.
+
+\texttt{git\ push\ origin\ your\_branch}
+
+\textbf{What It Does:}
+
+Pushes your committed changes to the remote repository (in the ``gpa''
+branch).
+
+\textbf{Why It's Important:}
+
+This step makes your latest changes available to collaborators and
+integrates your work into the shared repository.
+
+\subsection{10. (Optional) Open a pull request to merge
+branches}\label{optional-open-a-pull-request-to-merge-branches}
+
+Coordinate with your team by formally requesting to merge your changes
+into the master branch via a pull request (PR).
+
+\textbf{What It Involves:}
+
+Creating a PR on the repository hosting platform (like GitHub, GitLab,
+or Bitbucket).
+
+Engaging in code review and discussion about your changes.
+
+\textbf{Why It's Important:}
+
+Pull requests facilitate collaborative code review, ensure adherence to
+coding standards, and help maintain code quality. :::
+
+
+
+
+\end{document}
