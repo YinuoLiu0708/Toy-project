@@ -238,7 +238,14 @@ You may want to experiment with new code and features in your personal branch in
 Here is the command:
 
 ```{r, eval=FALSE}
+# old syntax
+git branch new-branch-name
+git checkout new-branch-name
+
+# new syntax
 git switch new-branch-name
+
+# try out the new syntax first. If it doesn't work, try out the old syntax.
 ```
 
 Replace your preferred branch name in the command!
