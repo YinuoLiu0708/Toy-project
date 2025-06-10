@@ -1,1 +1,0 @@
-Emily is practicing R
